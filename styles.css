@@ -137,6 +137,8 @@ button {
   margin: 0 auto 24px;
   filter: invert(1);
   object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 
 .hero-lockup {
@@ -1380,20 +1382,28 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   .main-nav.is-open {
     position: fixed;
     top: 76px;
-    right: 18px;
-    left: 18px;
+    right: var(--page-pad);
+    left: var(--page-pad);
     display: grid;
-    gap: 0;
+    gap: 2px;
     justify-items: start;
-    padding: 18px;
-    border: 1px solid var(--line);
-    background: var(--paper);
-    box-shadow: var(--shadow);
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(3, 11, 16, 0.86);
+    color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
   }
 
   .main-nav.is-open a {
     width: 100%;
-    padding: 14px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .main-nav.is-open a:last-child {
+    border-bottom: 0;
   }
 
   .about,
@@ -1473,8 +1483,8 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   }
 
   .hero-lockup {
-    margin-top: 72px;
-    margin-bottom: 70px;
+    margin-top: 46px;
+    margin-bottom: 54px;
     width: calc(100vw - 28px);
     max-width: calc(100vw - 28px);
   }
@@ -1490,9 +1500,7 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   }
 
   .logo-emblem {
-    width: 104px;
-    height: 104px;
-    margin-bottom: 18px;
+    display: none;
   }
 
   .hero-quote {
@@ -1518,6 +1526,63 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
 
   .section {
     padding: 76px 0;
+  }
+
+  .contact {
+    gap: 30px;
+    padding-top: 58px;
+    padding-bottom: 70px;
+  }
+
+  .contact-copy p:not(.section-kicker) {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .contact-links {
+    gap: 12px 18px;
+    margin-top: 24px;
+  }
+
+  .contact-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .contact-form {
+    gap: 15px;
+    padding-top: 0;
+  }
+
+  .contact-form label {
+    gap: 4px;
+  }
+
+  .contact-form span {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .contact-form input {
+    min-height: 36px;
+  }
+
+  .contact-form textarea {
+    min-height: 92px;
+    padding-top: 8px;
+  }
+
+  .contact-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 260px);
+    min-height: 46px;
+    margin-top: 8px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   h1,
