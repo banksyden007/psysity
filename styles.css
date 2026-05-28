@@ -1145,6 +1145,10 @@ main > .section:not(.hero) .video-card span {
   margin-top: 34px;
 }
 
+.contact-links a span {
+  display: none;
+}
+
 .contact-links a,
 .contact-form button {
   border-bottom: 1px solid currentColor;
@@ -1383,23 +1387,28 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     position: fixed;
     top: 76px;
     right: var(--page-pad);
-    left: var(--page-pad);
+    left: auto;
     display: grid;
-    gap: 2px;
-    justify-items: start;
-    padding: 16px 18px;
+    gap: 4px;
+    justify-items: stretch;
+    width: min(265px, calc(100vw - (var(--page-pad) * 2)));
+    padding: 12px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(3, 11, 16, 0.86);
+    border-radius: 8px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
+      rgba(3, 11, 16, 0.82);
     color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
   }
 
   .main-nav.is-open a {
     width: 100%;
-    padding: 12px 0;
+    padding: 12px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: right;
   }
 
   .main-nav.is-open a:last-child {
@@ -1534,6 +1543,12 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     padding-bottom: 70px;
   }
 
+  .contact h2 {
+    margin-bottom: 20px;
+    font-size: clamp(2.05rem, 11vw, 3rem);
+    line-height: 1.05;
+  }
+
   .contact-copy p:not(.section-kicker) {
     margin-bottom: 0;
     font-size: 1rem;
@@ -1541,22 +1556,77 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   }
 
   .contact-links {
-    gap: 12px 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
     margin-top: 24px;
   }
 
   .contact-links a {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    position: relative;
+    display: grid;
+    gap: 5px;
+    justify-items: center;
+    min-height: 58px;
+    padding: 9px 6px 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035)),
+      rgba(255, 255, 255, 0.045);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      0 12px 28px rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-align: center;
+    backdrop-filter: blur(16px) saturate(1.25);
+    -webkit-backdrop-filter: blur(16px) saturate(1.25);
+  }
+
+  .contact-links a::before {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent);
+    content: "";
+    pointer-events: none;
+  }
+
+  .contact-links a span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.09);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
   }
 
   .contact-form {
-    gap: 15px;
-    padding-top: 0;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 8px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
+      rgba(3, 11, 16, 0.44);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 18px 46px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   .contact-form label {
-    gap: 4px;
+    gap: 7px;
   }
 
   .contact-form span {
@@ -1564,25 +1634,35 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     letter-spacing: 0.12em;
   }
 
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.13);
+  }
+
   .contact-form input {
-    min-height: 36px;
+    min-height: 42px;
   }
 
   .contact-form textarea {
-    min-height: 92px;
-    padding-top: 8px;
+    min-height: 86px;
+    padding-top: 10px;
   }
 
   .contact-form button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: min(100%, 260px);
-    min-height: 46px;
-    margin-top: 8px;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 4px;
     padding: 0 18px;
-    border: 1px solid rgba(255, 255, 255, 0.62);
-    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #07141f;
   }
 
   h1,

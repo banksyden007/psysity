@@ -7,14 +7,24 @@
       name="description"
       content="Поле смысла - сообщество практикующих психоаналитических психологов. Подбор специалиста, индивидуальная терапия, консультации и поддерживающие материалы."
     />
+    <meta name="theme-color" content="#030b10" />
     <title>Поле смысла - психоаналитические психологи</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assets/optimized/hero-water-bg-900.webp" media="(max-width: 640px)" />
+    <link rel="preload" as="image" href="assets/optimized/hero-water-bg.webp" media="(min-width: 641px)" />
+    <style>
+      html,
+      body {
+        background: #030b10;
+        color-scheme: dark;
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260528-22" />
+    <link rel="stylesheet" href="styles.css?v=20260528-23" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -477,9 +487,9 @@
           <h2>Напишите, если хотите подобрать терапевта или задать вопрос о формате.</h2>
           <p>Опишите коротко, что сейчас важно. Мы поможем сориентироваться и предложим подходящего специалиста сообщества.</p>
           <div class="contact-links" aria-label="Контакты">
-            <a href="https://t.me/" target="_blank" rel="noreferrer">Telegram</a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="mailto:hello@example.com">Email</a>
+            <a href="https://t.me/" target="_blank" rel="noreferrer"><span aria-hidden="true">TG</span>Telegram</a>
+            <a href="https://wa.me/" target="_blank" rel="noreferrer"><span aria-hidden="true">WA</span>WhatsApp</a>
+            <a href="mailto:hello@example.com"><span aria-hidden="true">@</span>Email</a>
           </div>
         </div>
 
@@ -527,6 +537,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260528-22"></script>
+    <script src="script.js?v=20260528-23"></script>
   </body>
 </html>
