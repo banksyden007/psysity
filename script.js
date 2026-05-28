@@ -11,6 +11,7 @@ const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const messageField = document.querySelector("[data-message-field]");
 const messageCount = document.querySelector("[data-message-count]");
+const contactLinks = document.querySelector("[data-contact-links]");
 
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
@@ -28,6 +29,20 @@ const updateMessageCount = () => {
 
 messageField?.addEventListener("input", updateMessageCount);
 updateMessageCount();
+
+contactLinks?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("pointerenter", () => {
+    contactLinks.querySelectorAll("a").forEach((item) => item.classList.toggle("is-selected", item === link));
+  });
+
+  link.addEventListener("focus", () => {
+    contactLinks.querySelectorAll("a").forEach((item) => item.classList.toggle("is-selected", item === link));
+  });
+
+  link.addEventListener("pointerdown", () => {
+    contactLinks.querySelectorAll("a").forEach((item) => item.classList.toggle("is-selected", item === link));
+  });
+});
 
 const closeMenu = () => {
   nav?.classList.remove("is-open");
