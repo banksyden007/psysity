@@ -9,6 +9,25 @@ const filterButtons = document.querySelectorAll("[data-filter]");
 const videoCards = document.querySelectorAll("[data-category]");
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
+const messageField = document.querySelector("[data-message-field]");
+const messageCount = document.querySelector("[data-message-count]");
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("beforeunload", () => {
+  window.scrollTo(0, 0);
+});
+
+const updateMessageCount = () => {
+  if (messageField && messageCount) {
+    messageCount.textContent = String(messageField.value.length);
+  }
+};
+
+messageField?.addEventListener("input", updateMessageCount);
+updateMessageCount();
 
 const closeMenu = () => {
   nav?.classList.remove("is-open");
@@ -81,5 +100,6 @@ filterButtons.forEach((button) => {
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   contactForm.reset();
+  updateMessageCount();
   formStatus.textContent = "Спасибо. Сообщение подготовлено, осталось подключить отправку на почту или в мессенджер.";
 });

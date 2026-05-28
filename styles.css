@@ -241,6 +241,7 @@ button {
   min-height: 100vh;
   padding: 92px 20px 150px;
   overflow: hidden;
+  background: #030b10 url("assets/optimized/hero-water-bg.webp") center center / cover no-repeat;
   text-align: center;
 }
 
@@ -254,7 +255,7 @@ button {
 
 .hero::before {
   inset: 0;
-  background: url("assets/optimized/hero-water-bg.webp") center top / cover no-repeat;
+  background: url("assets/optimized/hero-water-bg.webp") center center / cover no-repeat;
   filter: none;
   opacity: 1;
   transform: none;
@@ -364,41 +365,111 @@ button {
 }
 
 .button-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: min(100%, 296px);
-  min-height: 48px;
+  min-height: 54px;
   padding: 0 22px;
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.55), transparent 10%),
+    radial-gradient(circle at 86% 14%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.16),
+    0 18px 40px rgba(0, 0, 0, 0.24);
   color: var(--paper);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  backdrop-filter: blur(18px) saturate(1.28);
+  -webkit-backdrop-filter: blur(18px) saturate(1.28);
   transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
     background 180ms ease,
     color 180ms ease,
     border-color 180ms ease;
 }
 
+.button-link::before,
+.button-link::after,
+.format-grid a::before,
+.format-grid a::after,
+.filter-tabs button::before,
+.filter-tabs button::after,
+.contact-links a::before,
+.contact-links a::after,
+.contact-form button::before,
+.contact-form button::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.button-link::before,
+.format-grid a::before,
+.filter-tabs button::before,
+.contact-links a::before,
+.contact-form button::before {
+  inset: 3px 10px auto;
+  height: 40%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+  opacity: 0.7;
+}
+
+.button-link::after,
+.format-grid a::after,
+.filter-tabs button::after,
+.contact-links a::after,
+.contact-form button::after {
+  right: 14%;
+  bottom: 5px;
+  left: 14%;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(92, 205, 255, 0.38), rgba(255, 255, 255, 0));
+  filter: blur(4px);
+  opacity: 0.8;
+}
+
 .button-link:hover {
-  border-color: var(--paper);
-  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.55);
+  background:
+    radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.62), transparent 10%),
+    radial-gradient(circle at 86% 14%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.07)),
+    rgba(255, 255, 255, 0.12);
   color: var(--paper);
+  transform: translateY(-1px);
 }
 
 .button-link-primary {
-  border-color: var(--paper);
-  background: var(--paper);
-  color: var(--ink);
+  border-color: rgba(255, 255, 255, 0.46);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.82), transparent 12%),
+    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.22)),
+    rgba(255, 255, 255, 0.34);
+  color: var(--paper);
 }
 
 .button-link-primary:hover {
-  background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(255, 255, 255, 0.86);
-  color: var(--ink);
+  border-color: rgba(255, 255, 255, 0.62);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9), transparent 12%),
+    radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.28)),
+    rgba(255, 255, 255, 0.38);
+  color: var(--paper);
 }
 
 .section {
@@ -668,31 +739,51 @@ main > .section:not(.hero) .video-card span {
 }
 
 .format-grid a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   justify-self: start;
   align-self: end;
   min-width: 220px;
-  min-height: 48px;
+  min-height: 52px;
   margin-top: 34px;
   padding: 0 20px;
-  border: 1px solid currentColor;
-  color: var(--ink);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.5), transparent 10%),
+    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.12),
+    0 14px 30px rgba(0, 0, 0, 0.16);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  backdrop-filter: blur(16px) saturate(1.25);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25);
   transition:
+    transform 180ms ease,
     background 180ms ease,
     color 180ms ease,
     border-color 180ms ease;
 }
 
 .format-grid a:hover {
-  border-color: var(--red);
-  background: var(--red);
+  border-color: rgba(255, 255, 255, 0.5);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.58), transparent 10%),
+    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.06)),
+    rgba(255, 255, 255, 0.085);
   color: var(--paper);
+  transform: translateY(-1px);
 }
 
 .specialties {
@@ -935,30 +1026,49 @@ main > .section:not(.hero) .video-card span {
 }
 
 .filter-tabs button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   min-height: 58px;
   padding: 0 22px;
-  border: 1px solid var(--ink);
-  background: transparent;
-  color: var(--ink);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.46), transparent 10%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.045);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.1),
+    0 12px 28px rgba(0, 0, 0, 0.14);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
+  backdrop-filter: blur(16px) saturate(1.22);
+  -webkit-backdrop-filter: blur(16px) saturate(1.22);
   transition:
+    transform 180ms ease,
     background 180ms ease,
     color 180ms ease,
     border-color 180ms ease;
 }
 
 .filter-tabs button.is-active {
-  background: var(--ink);
+  border-color: rgba(255, 255, 255, 0.48);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.58), transparent 10%),
+    radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.12);
   color: var(--paper);
+  transform: translateY(-1px);
 }
 
 .video-grid {
@@ -1151,12 +1261,31 @@ main > .section:not(.hero) .video-card span {
 
 .contact-links a,
 .contact-form button {
-  border-bottom: 1px solid currentColor;
-  color: var(--ink);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.48), transparent 10%),
+    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.1),
+    0 12px 28px rgba(0, 0, 0, 0.16);
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  backdrop-filter: blur(16px) saturate(1.22);
+  -webkit-backdrop-filter: blur(16px) saturate(1.22);
 }
 
 .contact-form {
@@ -1205,11 +1334,7 @@ main > .section:not(.hero) .video-card span {
 
 .contact-form button {
   justify-self: start;
-  padding: 0 0 6px;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  background: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.22);
 }
 
 .form-status {
@@ -1360,6 +1485,229 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   color: rgba(255, 255, 255, 0.94);
 }
 
+.button-link,
+.format-grid a,
+.filter-tabs button,
+.contact-links a,
+.contact-form button {
+  border-radius: 999px;
+}
+
+.format-grid a:hover,
+.filter-tabs button.is-active,
+.contact-links a:hover,
+.contact-form button:hover {
+  border-color: rgba(255, 255, 255, 0.58);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.58), transparent 10%),
+    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.065)),
+    rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.button-link,
+.format-grid a,
+.filter-tabs button,
+.contact-links a,
+.contact-form button {
+  border-color: rgba(255, 255, 255, 0.24);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.14),
+    0 16px 34px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.26);
+}
+
+.button-link-primary,
+.button-link-primary:hover,
+.format-grid a:hover,
+.filter-tabs button.is-active,
+.contact-links a:hover,
+.contact-form button:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.075)),
+    rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.98);
+}
+
+.button-link::before,
+.format-grid a::before,
+.filter-tabs button::before,
+.contact-links a::before,
+.contact-form button::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+}
+
+.button-link::after,
+.format-grid a::after,
+.filter-tabs button::after,
+.contact-links a::after,
+.contact-form button::after {
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0));
+}
+
+.contact {
+  grid-template-columns: minmax(320px, 0.78fr) minmax(380px, 0.72fr);
+  gap: clamp(34px, 6vw, 82px);
+}
+
+.contact-links {
+  display: flex;
+  gap: 0;
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.035);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 38px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.contact-links a {
+  min-height: 42px;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.contact-links a:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form {
+  gap: 16px;
+  padding: clamp(20px, 3vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    rgba(3, 11, 16, 0.36);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 22px 54px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(16px) saturate(1.16);
+  -webkit-backdrop-filter: blur(16px) saturate(1.16);
+}
+
+.contact-form input,
+.contact-form textarea {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.contact-form textarea {
+  min-height: 112px;
+  padding-top: 14px;
+}
+
+.contact-form button {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 2px;
+}
+
+/* Final neutral liquid-glass controls */
+.hero {
+  min-height: 100svh;
+}
+
+.hero::before {
+  background: transparent;
+}
+
+.button-link,
+.button-link-primary,
+.format-grid a,
+.filter-tabs button,
+.contact-links a,
+.contact-form button {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.16),
+    0 16px 34px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(18px) saturate(1.18);
+  -webkit-backdrop-filter: blur(18px) saturate(1.18);
+}
+
+.button-link::before,
+.button-link::after,
+.format-grid a::before,
+.format-grid a::after,
+.filter-tabs button::before,
+.filter-tabs button::after,
+.contact-links a::before,
+.contact-links a::after,
+.contact-form button::before,
+.contact-form button::after {
+  display: none;
+}
+
+.button-link:hover,
+.button-link-primary:hover,
+.format-grid a:hover,
+.filter-tabs button:hover,
+.filter-tabs button.is-active,
+.contact-links a:hover,
+.contact-form button:hover {
+  border-color: rgba(255, 255, 255, 0.42);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.085);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.14),
+    0 18px 38px rgba(0, 0, 0, 0.24);
+  color: rgba(255, 255, 255, 0.96);
+  transform: translateY(-1px);
+}
+
+.contact-links {
+  gap: 12px;
+  width: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.contact-links a {
+  min-height: 48px;
+  padding: 0 18px;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.16),
+    0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1200px) {
   .main-nav {
     gap: clamp(20px, 3vw, 44px);
@@ -1460,6 +1808,7 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     min-height: auto;
     padding-top: 92px;
     padding-bottom: 76px;
+    background-image: url("assets/optimized/hero-water-bg-900.webp");
   }
 
   .hero::before {
@@ -1558,43 +1907,36 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   .contact-links {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 9px;
+    gap: 0;
+    width: 100%;
+    padding: 5px;
     margin-top: 24px;
   }
 
   .contact-links a {
-    position: relative;
     display: grid;
     gap: 5px;
     justify-items: center;
-    min-height: 58px;
+    min-height: 62px;
     padding: 9px 6px 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 8px;
-    background:
-      linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035)),
-      rgba(255, 255, 255, 0.045);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.22),
-      0 12px 28px rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    border-radius: 999px;
     color: rgba(255, 255, 255, 0.92);
     font-size: 0.58rem;
     letter-spacing: 0.1em;
     line-height: 1;
     text-align: center;
-    backdrop-filter: blur(16px) saturate(1.25);
-    -webkit-backdrop-filter: blur(16px) saturate(1.25);
+    box-shadow: none;
   }
 
   .contact-links a::before {
     position: absolute;
-    inset: 0 auto auto 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent);
-    content: "";
-    pointer-events: none;
+    inset: 4px 10px auto;
+    width: auto;
+    height: 42%;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent);
+    opacity: 0.72;
   }
 
   .contact-links a span {
@@ -1603,9 +1945,11 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     place-items: center;
     width: 28px;
     height: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.26);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.09);
+    background:
+      radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.4), transparent 32%),
+      rgba(255, 255, 255, 0.09);
     font-size: 0.62rem;
     letter-spacing: 0.02em;
   }
@@ -1613,16 +1957,7 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   .contact-form {
     gap: 12px;
     padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 8px;
-    background:
-      linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025)),
-      rgba(3, 11, 16, 0.44);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      0 18px 46px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
   }
 
   .contact-form label {
@@ -1637,9 +1972,7 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   .contact-form input,
   .contact-form textarea {
     padding: 0 12px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.13);
+    border-radius: 12px;
   }
 
   .contact-form input {
@@ -1652,17 +1985,7 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   }
 
   .contact-form button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 48px;
-    margin-top: 4px;
-    padding: 0 18px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #07141f;
+    min-height: 52px;
   }
 
   h1,
@@ -1764,4 +2087,106 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
     animation-iteration-count: 1 !important;
   }
 }
-  color: rgba(255, 255, 255, 0.82);
+
+.hero::before {
+  background: transparent;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100svh;
+    background-image: url("assets/optimized/hero-water-bg-900.webp");
+  }
+
+  .hero::before {
+    background: transparent;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .contact-links a {
+    display: flex;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 16px;
+  }
+}
+
+.field-hint {
+  justify-self: end;
+  margin-top: -6px;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.button-link,
+.button-link-primary,
+.format-grid a,
+.filter-tabs button,
+.contact-links a,
+.contact-form button {
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.32) !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.07) 45%, rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.075) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.18),
+    0 14px 30px rgba(0, 0, 0, 0.18) !important;
+  color: rgba(255, 255, 255, 0.96) !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+  transform: none !important;
+  backdrop-filter: blur(16px) saturate(1.12) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.12) !important;
+}
+
+.button-link::before,
+.button-link::after,
+.format-grid a::before,
+.format-grid a::after,
+.filter-tabs button::before,
+.filter-tabs button::after,
+.contact-links a::before,
+.contact-links a::after,
+.contact-form button::before,
+.contact-form button::after {
+  display: none !important;
+  content: none !important;
+}
+
+.button-link:hover,
+.button-link-primary:hover,
+.format-grid a:hover,
+.filter-tabs button:hover,
+.filter-tabs button.is-active,
+.contact-links a:hover,
+.contact-form button:hover {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.09) 45%, rgba(255, 255, 255, 0.055)),
+    rgba(255, 255, 255, 0.095) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    inset 0 -12px 22px rgba(0, 0, 0, 0.16),
+    0 16px 34px rgba(0, 0, 0, 0.22) !important;
+  color: rgba(255, 255, 255, 0.98) !important;
+  transform: none !important;
+}
+
+.contact-form textarea {
+  max-height: 180px;
+}

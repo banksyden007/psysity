@@ -16,15 +16,32 @@
     <style>
       html,
       body {
+        margin: 0;
         background: #030b10;
         color-scheme: dark;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding: 92px 20px 150px;
+        overflow: hidden;
+        background: #030b10 url("assets/optimized/hero-water-bg.webp") center center / cover no-repeat;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          min-height: 100svh;
+          padding: 92px 20px 76px;
+          background-image: url("assets/optimized/hero-water-bg-900.webp");
+        }
       }
     </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260528-23" />
+    <link rel="stylesheet" href="styles.css?v=20260528-30" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -504,7 +521,8 @@
           </label>
           <label>
             <span>Что важно обсудить?</span>
-            <textarea name="message" rows="4"></textarea>
+            <textarea name="message" rows="4" maxlength="500" data-message-field></textarea>
+            <small class="field-hint"><span data-message-count>0</span>/500 символов</small>
           </label>
           <button type="submit">Отправить</button>
           <p class="form-status" data-form-status role="status" aria-live="polite"></p>
@@ -537,6 +555,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260528-23"></script>
+    <script src="script.js?v=20260528-30"></script>
   </body>
 </html>
