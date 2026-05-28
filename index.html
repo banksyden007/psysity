@@ -9,6 +9,14 @@
     />
     <meta name="theme-color" content="#030b10" />
     <title>Поле смысла - психоаналитические психологи</title>
+    <script>
+      document.documentElement.classList.add("is-booting");
+      window.__showSite = function () {
+        document.documentElement.classList.add("boot-ready");
+        document.documentElement.classList.remove("is-booting");
+      };
+      window.setTimeout(window.__showSite, 900);
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href="assets/optimized/hero-water-bg-900.webp" media="(max-width: 640px)" />
@@ -19,6 +27,15 @@
         margin: 0;
         background: #030b10;
         color-scheme: dark;
+      }
+
+      html.is-booting body {
+        opacity: 0;
+      }
+
+      html.boot-ready body {
+        opacity: 1;
+        transition: opacity 120ms ease;
       }
 
       .hero {
@@ -41,7 +58,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260528-31" />
+    <link rel="stylesheet" href="styles.css?v=20260528-32" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -555,6 +572,6 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260528-31"></script>
+    <script src="script.js?v=20260528-32"></script>
   </body>
 </html>

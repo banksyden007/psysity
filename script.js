@@ -17,9 +17,20 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-window.addEventListener("beforeunload", () => {
-  window.scrollTo(0, 0);
-});
+const revealSite = () => {
+  if (typeof window.__showSite === "function") {
+    window.__showSite();
+  } else {
+    document.documentElement.classList.add("boot-ready");
+    document.documentElement.classList.remove("is-booting");
+  }
+};
+
+if (document.fonts?.ready) {
+  document.fonts.ready.then(() => requestAnimationFrame(revealSite));
+} else {
+  requestAnimationFrame(revealSite);
+}
 
 const updateMessageCount = () => {
   if (messageField && messageCount) {
