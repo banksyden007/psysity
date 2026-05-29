@@ -1345,18 +1345,43 @@ main > .section:not(.hero) .video-card span {
 }
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  display: grid;
+  gap: 26px;
   width: min(calc(100% - (var(--page-pad) * 2)), 1300px);
   margin: 0 auto;
   padding: 42px 0 54px;
   border-top: 0;
 }
 
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
 .site-footer nav {
   gap: 30px;
+}
+
+.footer-legal {
+  display: grid;
+  gap: 8px;
+  max-width: 860px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.footer-legal p {
+  margin: 0;
+  color: inherit;
+}
+
+.footer-legal a {
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
 }
 
 .video-modal {
@@ -2068,6 +2093,12 @@ main > .section:not(.hero) .contact-copy p:not(.section-kicker) {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .site-footer nav {
