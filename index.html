@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Поле смысла - сообщество практикующих психоаналитических психологов. Подбор специалиста, индивидуальная терапия, консультации и поддерживающие материалы."
+      content="Поле смысла - сообщество практикующих психоаналитических психотерапевтов. Подбор специалиста, индивидуальная терапия, консультации и поддерживающие материалы."
     />
     <meta name="theme-color" content="#030b10" />
     <title>Поле смысла - психоаналитические психологи</title>
@@ -58,7 +58,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260601-3" />
+    <link rel="stylesheet" href="styles.css?v=20260601-16" />
   </head>
   <body>
     <header class="site-header" data-header>
@@ -70,10 +70,7 @@
       <nav class="main-nav" data-nav aria-label="Основная навигация">
         <a href="#about">О нас</a>
         <a href="#specialties">Запросы</a>
-        <a href="#therapists">Терапевты</a>
-        <a href="#formats">Форматы</a>
-        <a href="#videos">Видео</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#therapists">Психотерапевты</a>
       </nav>
 
       <button class="menu-toggle" type="button" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">
@@ -133,90 +130,49 @@
         </div>
 
         <div class="hero-lockup" aria-label="Поле смысла">
-          <img class="logo-emblem" src="assets/optimized/logo-pole-smysla-transparent.png" alt="" width="160" height="160" />
-          <p class="logo-title">Поле смысла</p>
-          <p class="logo-subtitle">сообщество психоаналитических практикующих терапевтов</p>
+          <p class="logo-title">
+            <span class="logo-word">
+              <span>П</span><img class="logo-lettermark" src="assets/optimized/logo-pole-smysla-transparent.png" alt="" width="72" height="72" /><span>ле</span><span class="logo-word-gap">смысла</span>
+            </span>
+          </p>
+          <p class="logo-subtitle">сообщество практикующих психоаналитических психотерапевтов</p>
         </div>
 
-        <blockquote class="hero-quote">
-          <span aria-hidden="true">“</span>
+        <div class="hero-statement" aria-label="О сообществе">
+          <p>Не каждая трудность преодолевается усилием воли</p>
           <p>
-            Сообщество практикующих психоаналитических психологов для тех, кто хочет
-            разобраться в отношениях, переживаниях, повторяющихся сценариях и себе.
+            Мы создали пространство, чтобы вы смогли быть услышанным,
+            познакомиться с собой, обнаружить себя в отношениях с другими и с жизнью.
           </p>
-          <cite>- Поле смысла</cite>
-        </blockquote>
+        </div>
 
-        <div class="hero-actions" aria-label="Основные действия">
-          <a class="button-link button-link-primary" href="#contacts">Подобрать терапевта</a>
+        <div class="hero-actions" aria-label="Основное действие">
           <a class="button-link" href="#therapists">Смотреть специалистов</a>
         </div>
 
       </section>
 
-      <section class="about section" id="about">
-        <div class="paint-mark" aria-hidden="true"></div>
-        <figure class="about-photo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/optimized/about-notes-720.webp 720w, assets/optimized/about-notes.webp 1536w"
-              sizes="(max-width: 980px) 100vw, 520px"
-            />
-            <img
-              src="assets/about-notes.png"
-              alt="Заметки и спокойная рабочая атмосфера консультации"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        </figure>
-
-        <div class="about-copy">
-          <p class="section-kicker">о сообществе</p>
-          <h1>Мы объединяем психологов, которые работают в психоаналитическом подходе.</h1>
-          <p>
-            В центре нашей работы - внимательное исследование внутренней жизни,
-            отношений, повторяющихся сценариев и того опыта, который продолжает
-            влиять на настоящее.
-          </p>
-          <p>
-            Мы помогаем подобрать специалиста под запрос и формат: разовая
-            консультация, регулярная индивидуальная терапия, онлайн-встречи или очная
-            работа.
-          </p>
-        </div>
-      </section>
-
-      <section class="approach section" id="approach">
-        <div class="wide-copy">
-          <p class="section-kicker">о подходе</p>
-          <h2>Мы не даём универсальных советов. Мы помогаем понять, как устроен ваш опыт и что в нём повторяется.</h2>
-        </div>
-
-        <div class="approach-list">
-          <article>
-            <span>01</span>
-            <h3>Бережная диагностика</h3>
-            <p>Сначала мы понимаем, что именно происходит: тревога, выгорание, отношения, самооценка или сложный переход.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Понятные опоры</h3>
-            <p>Вы уносите не только инсайты, но и конкретные способы поддержать себя между встречами.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Темп без насилия</h3>
-            <p>Мы двигаемся так, чтобы изменения были возможными, а не просто красивыми на бумаге.</p>
-          </article>
-        </div>
+      <section class="method-intro section" id="about">
+        <p>
+          Психоаналитический метод позволяет глубоко исследовать свою жизнь,
+          посмотреть на повторяющиеся паттерны и увидеть, как прошлое влияет
+          на настоящее, разобраться с конфликтами внутри себя и во вне, честно
+          взглянуть на то, что есть внутри нас, что не дает нам возможности
+          справиться и продвинуться к нашим желаниям и целям. Психоанализ
+          не подразумевает реактивных перемен, это бережный путь к постепенным
+          изменениям. Какие-то симптомы могут проходить сами собой в процессе
+          познания, с какими-то придется разгадывать причины их появления.
+          А вокруг каких-то придется установить табличку "опасно" и не
+          переступать эту границу, пока не придет время. Это разговорный метод,
+          не подразумевающий действия, советов и упражнений. Глубинный путь туда,
+          где боль перестает быть приговором, а страдание обретает голос,
+          а история форму. И жизнь становится жизнью, а не отбиванием срока.
+        </p>
       </section>
 
       <section class="specialties section" id="specialties">
         <div class="specialties-heading">
-          <p class="section-kicker">с чем работаем</p>
-          <h2>Запросы, с которыми можно обратиться к терапевтам сообщества.</h2>
+          <p class="section-kicker">Запросы, с которыми можно обратиться</p>
         </div>
 
         <div class="specialty-grid">
@@ -242,7 +198,7 @@
           </article>
           <article>
             <h3>Опыт и психосоматика</h3>
-            <p>Эмоциональные травмы, детский опыт, пережитое насилие, а также телесные симптомы, связанные с эмоциональным состоянием.</p>
+            <p>Эмоциональные травмы, детский опыт, пережитое насилие, а также телесные симптомы.</p>
           </article>
         </div>
       </section>
@@ -250,7 +206,6 @@
       <section class="therapists section" id="therapists">
         <div class="therapists-heading">
           <p class="section-kicker">терапевты сообщества</p>
-          <h2>Можно выбрать специалиста самостоятельно или попросить нас помочь с подбором.</h2>
         </div>
 
         <div class="therapist-grid" aria-label="Список терапевтов, прокручивается горизонтально">
@@ -262,12 +217,12 @@
                   srcset="assets/optimized/ksenia-starostina-520.webp 520w, assets/optimized/ksenia-starostina-900.webp 900w"
                   sizes="(max-width: 640px) 74vw, 360px"
                 />
-                <img src="assets/ksenia-starostina.jpg" alt="Ксения Старостина Владимировна" loading="lazy" decoding="async" />
+                <img src="assets/ksenia-starostina.jpg" alt="Ксения Владимировна Старостина" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <div class="therapist-copy">
               <p class="therapist-role">психоаналитический психотерапевт</p>
-              <h3>Ксения Старостина Владимировна</h3>
+              <h3>Ксения Владимировна Старостина</h3>
               <div class="therapist-details">
                 <div>
                   <h4>Образование</h4>
@@ -280,9 +235,9 @@
                 <div>
                   <h4>Опыт</h4>
                   <ul>
-                    <li>НМИЦ трансплантологии и искусственных органов имени академика В. И. Шумакова Минздрава России;</li>
-                    <li>реабилитационный центр «Русское поле»;</li>
-                    <li>телефон доверия «Ярославна»;</li>
+                    <li>работа в НМИЦ трансплантологии и искусственных органов имени академика В. И. Шумакова Минздрава России;</li>
+                    <li>в реабилитационном центре ЛРНЦ «Русское поле» с родителями и детьми после онкологических заболеваний;</li>
+                    <li>практика на телефоне доверия «Ярославна»;</li>
                     <li>частная практика с 2021 года.</li>
                   </ul>
                 </div>
@@ -378,12 +333,12 @@
                   srcset="assets/optimized/tatyana-kubrina-520.webp 520w, assets/optimized/tatyana-kubrina-900.webp 900w"
                   sizes="(max-width: 640px) 74vw, 360px"
                 />
-                <img src="assets/tatyana-kubrina.jpg" alt="Татьяна Кубрина Николаевна" loading="lazy" decoding="async" />
+                <img src="assets/tatyana-kubrina.jpg" alt="Кубрина Татьяна Николаевна" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <div class="therapist-copy">
               <p class="therapist-role">психоаналитический психотерапевт</p>
-              <h3>Татьяна Кубрина Николаевна</h3>
+              <h3>Кубрина Татьяна Николаевна</h3>
               <div class="therapist-details">
                 <div>
                   <h4>Образование</h4>
@@ -418,12 +373,12 @@
                   srcset="assets/optimized/ksenia-burkova-520.webp 520w, assets/optimized/ksenia-burkova-900.webp 900w"
                   sizes="(max-width: 640px) 74vw, 360px"
                 />
-                <img src="assets/ksenia-burkova.jpg" alt="Ксения Буркова Юрьевна" loading="lazy" decoding="async" />
+                <img src="assets/ksenia-burkova.jpg" alt="Буркова Ксения Юрьевна" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <div class="therapist-copy">
               <p class="therapist-role">клинический психолог, психоаналитический психотерапевт</p>
-              <h3>Ксения Буркова Юрьевна</h3>
+              <h3>Буркова Ксения Юрьевна</h3>
               <div class="therapist-details">
                 <div>
                   <h4>Образование</h4>
@@ -480,12 +435,12 @@
                   srcset="assets/optimized/alsu-bekish-520.webp 520w, assets/optimized/alsu-bekish-900.webp 900w"
                   sizes="(max-width: 640px) 74vw, 360px"
                 />
-                <img src="assets/alsu-bekish.jpg" alt="Алсу Бекиш Ильгизовна" loading="lazy" decoding="async" />
+                <img src="assets/alsu-bekish.jpg" alt="Бекиш Алсу Ильгизовна" loading="lazy" decoding="async" />
               </picture>
             </figure>
             <div class="therapist-copy">
               <p class="therapist-role">психоаналитический психотерапевт</p>
-              <h3>Алсу Бекиш Ильгизовна</h3>
+              <h3>Бекиш Алсу Ильгизовна</h3>
               <div class="therapist-details">
                 <div>
                   <h4>Образование</h4>
@@ -513,206 +468,6 @@
         </div>
       </section>
 
-      <section class="formats section" id="formats">
-        <div class="formats-heading">
-          <p class="section-kicker">форматы взаимодействия</p>
-          <h2>Можно начать с одной встречи, выбрать регулярную терапию или попросить нас подобрать специалиста.</h2>
-        </div>
-
-        <div class="format-grid">
-          <article>
-            <h2>Индивиду&shy;альные сессии</h2>
-            <p>Регулярная работа с терапевтом онлайн или очно. Обычно 50 минут, раз в неделю.</p>
-            <a href="#contacts">Подобрать</a>
-          </article>
-          <article>
-            <h2>Разовая консуль&shy;тация</h2>
-            <p>Одна встреча, чтобы сформулировать запрос, увидеть возможный фокус и понять, какой специалист подойдёт.</p>
-            <a href="#contacts">Обсудить запрос</a>
-          </article>
-          <article>
-            <h2>Видео и практики</h2>
-            <p>Будущий раздел с короткими видео, упражнениями и разбором частых тем.</p>
-            <a href="#videos">Смотреть раздел</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="process section" id="process">
-        <div class="process-heading">
-          <p class="section-kicker">как проходит работа</p>
-          <h2>Сначала мы создаём ясность, потом ищем шаги, которые можно выдержать.</h2>
-        </div>
-
-        <div class="process-steps" aria-label="Этапы работы">
-          <article>
-            <span>1</span>
-            <h3>Первый контакт</h3>
-            <p>Вы коротко описываете запрос, а я отвечаю, подхожу ли по теме и какой формат будет уместнее.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>Первая встреча</h3>
-            <p>Мы уточняем историю, договариваемся о цели и темпе. Никаких тестов на правильность ваших чувств.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>Регулярная работа</h3>
-            <p>Отслеживаем изменения, собираем новые способы опоры и бережно проверяем, что правда помогает.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="videos section" id="videos">
-        <div class="video-head">
-          <div class="video-intro">
-            <p class="section-kicker">продукты</p>
-            <h2>Видео и практики для самостоятельной поддержки</h2>
-            <p>
-              Короткие ролики можно смотреть в своём темпе: практики, разборы
-              частых состояний и мягкие упражнения между консультациями.
-            </p>
-          </div>
-
-          <div class="filter-tabs" role="tablist" aria-label="Фильтр видео">
-            <button class="is-active" type="button" data-filter="all">Все</button>
-            <button type="button" data-filter="practice">Практики</button>
-            <button type="button" data-filter="talk">Разборы</button>
-          </div>
-        </div>
-
-        <div class="video-grid">
-          <article class="video-card" data-category="talk">
-            <div class="video-frame">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="assets/optimized/video-anxiety-720.webp 720w, assets/optimized/video-anxiety.webp 1672w"
-                  sizes="(max-width: 980px) 100vw, 376px"
-                />
-                <img src="assets/video-anxiety.png" alt="Превью видео о тревоге" loading="lazy" decoding="async" />
-              </picture>
-              <button class="video-play" type="button" data-video-button aria-label="Открыть видео Как справляться с тревогой">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 7v10l8-5z" />
-                </svg>
-              </button>
-            </div>
-            <span>12:40</span>
-            <h3>Как справляться с тревогой</h3>
-          </article>
-
-          <article class="video-card" data-category="practice">
-            <div class="video-frame">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="assets/optimized/video-grounding-720.webp 720w, assets/optimized/video-grounding.webp 1672w"
-                  sizes="(max-width: 980px) 100vw, 376px"
-                />
-                <img src="assets/video-grounding.png" alt="Превью практики заземления" loading="lazy" decoding="async" />
-              </picture>
-              <button class="video-play" type="button" data-video-button aria-label="Открыть видео Практика заземления">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 7v10l8-5z" />
-                </svg>
-              </button>
-            </div>
-            <span>08:15</span>
-            <h3>Практика заземления</h3>
-          </article>
-
-          <article class="video-card" data-category="practice">
-            <div class="video-frame">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="assets/optimized/video-compassion-720.webp 720w, assets/optimized/video-compassion.webp 1672w"
-                  sizes="(max-width: 980px) 100vw, 376px"
-                />
-                <img
-                  src="assets/video-compassion.png"
-                  alt="Превью видео о бережном разговоре с собой"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <button class="video-play" type="button" data-video-button aria-label="Открыть видео Как бережно говорить с собой">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 7v10l8-5z" />
-                </svg>
-              </button>
-            </div>
-            <span>10:05</span>
-            <h3>Как бережно говорить с собой</h3>
-          </article>
-        </div>
-      </section>
-
-      <section class="reviews section">
-        <p class="section-kicker">отзывы</p>
-        <div class="review-grid">
-          <blockquote>
-            <p>“После консультаций стало понятнее, где я правда устала, а где просто привыкла себя подгонять.”</p>
-          </blockquote>
-          <blockquote>
-            <p>“Очень спокойная атмосфера. Не было ощущения, что меня оценивают или торопят.”</p>
-          </blockquote>
-        </div>
-      </section>
-
-      <section class="faq section" id="faq">
-        <div class="faq-copy">
-          <p class="section-kicker">частые вопросы</p>
-          <h2>Перед первой встречей нормально хотеть больше определённости.</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>Можно ли прийти, если я не могу сформулировать запрос?</summary>
-            <p>Да. Иногда первая задача как раз в том, чтобы отделить усталость, тревогу, отношения и ожидания других людей друг от друга.</p>
-          </details>
-          <details>
-            <summary>Вы работаете онлайн?</summary>
-            <p>Да, можно выбрать онлайн-встречу. Важно только спокойное место, где вы сможете говорить без спешки и постоянных отвлечений.</p>
-          </details>
-          <details>
-            <summary>Сколько встреч понадобится?</summary>
-            <p>Это зависит от запроса. После первой консультации можно договориться о коротком фокусном формате или о более регулярной работе.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="contact section" id="contacts">
-        <div class="contact-copy">
-          <p class="section-kicker">контакты</p>
-          <h2>Напишите, если хотите подобрать терапевта или задать вопрос о формате.</h2>
-          <p>Опишите коротко, что сейчас важно. Мы поможем сориентироваться и предложим подходящего специалиста сообщества.</p>
-          <div class="contact-links" data-contact-links aria-label="Контакты">
-            <a class="is-selected" href="https://t.me/" target="_blank" rel="noreferrer">Telegram</a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="mailto:hello@example.com">Email</a>
-          </div>
-        </div>
-
-        <form class="contact-form" data-contact-form>
-          <label>
-            <span>Имя</span>
-            <input type="text" name="name" autocomplete="name" required />
-          </label>
-          <label>
-            <span>Телефон или Telegram</span>
-            <input type="text" name="contact" autocomplete="tel" required />
-          </label>
-          <label>
-            <span>Что важно обсудить?</span>
-            <textarea name="message" rows="4" maxlength="500" data-message-field></textarea>
-            <small class="field-hint"><span data-message-count>0</span>/500 символов</small>
-          </label>
-          <button type="submit">Отправить</button>
-          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-        </form>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -724,8 +479,7 @@
         <nav aria-label="Навигация в подвале">
           <a href="#about">О нас</a>
           <a href="#specialties">Запросы</a>
-          <a href="#therapists">Терапевты</a>
-          <a href="#formats">Форматы</a>
+          <a href="#therapists">Психотерапевты</a>
         </nav>
       </div>
       <div class="footer-legal">
@@ -735,18 +489,6 @@
       </div>
     </footer>
 
-    <div class="video-modal" data-video-modal hidden>
-      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
-        <button class="modal-close" type="button" data-modal-close aria-label="Закрыть окно">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 6l12 12M18 6 6 18" />
-          </svg>
-        </button>
-        <h2 id="video-modal-title">Видео скоро появится</h2>
-        <p data-video-modal-copy>Когда ролики будут готовы, сюда можно подключить YouTube, Vimeo или локальные видеофайлы.</p>
-      </div>
-    </div>
-
-    <script src="script.js?v=20260601-3"></script>
+    <script src="script.js?v=20260601-16"></script>
   </body>
 </html>
