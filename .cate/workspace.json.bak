@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "name": "websity",
+  "color": "",
+  "canvas": {
+    "nodes": [
+      {
+        "panelId": "6705b19f-d308-4eff-9acb-096ab89d978b",
+        "panelType": "terminal",
+        "title": "",
+        "origin": {
+          "x": 281,
+          "y": 57
+        },
+        "size": {
+          "width": 600,
+          "height": 500
+        }
+      }
+    ],
+    "regions": [],
+    "zoomLevel": 1,
+    "viewportOffset": {
+      "x": 200,
+      "y": 18
+    }
+  },
+  "dockState": {
+    "zones": {
+      "left": {
+        "position": "left",
+        "visible": false,
+        "size": 260,
+        "layout": null
+      },
+      "right": {
+        "position": "right",
+        "visible": false,
+        "size": 260,
+        "layout": null
+      },
+      "bottom": {
+        "position": "bottom",
+        "visible": false,
+        "size": 240,
+        "layout": null
+      },
+      "center": {
+        "position": "center",
+        "visible": true,
+        "size": 0,
+        "layout": {
+          "type": "tabs",
+          "id": "83b1c7bd-d7ff-462a-9ea9-3e4789c30efa",
+          "panelIds": [
+            "af15f1e0-9bac-42c6-b91a-7ce9e9f90db2"
+          ],
+          "activeIndex": 0
+        }
+      }
+    },
+    "locations": {
+      "af15f1e0-9bac-42c6-b91a-7ce9e9f90db2": {
+        "type": "dock",
+        "zone": "center",
+        "stackId": "83b1c7bd-d7ff-462a-9ea9-3e4789c30efa"
+      }
+    }
+  },
+  "dockPanels": {
+    "af15f1e0-9bac-42c6-b91a-7ce9e9f90db2": {
+      "type": "canvas",
+      "title": "Canvas"
+    }
+  }
+}
