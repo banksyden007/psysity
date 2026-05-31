@@ -850,6 +850,7 @@ main > .section:not(.hero) .video-card span {
 
 .therapist-grid {
   display: flex;
+  align-items: stretch;
   gap: clamp(24px, 4vw, 54px);
   width: 100%;
   margin-top: clamp(34px, 5vw, 62px);
@@ -876,6 +877,12 @@ main > .section:not(.hero) .video-card span {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   scroll-snap-align: start;
+}
+
+.therapist-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .therapist-media {
@@ -910,6 +917,9 @@ main > .section:not(.hero) .video-card span {
 }
 
 .therapist-grid h3 {
+  display: flex;
+  align-items: flex-start;
+  min-height: 2.18em;
   margin-bottom: 14px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.9rem, 2.8vw, 3rem);
@@ -925,7 +935,9 @@ main > .section:not(.hero) .video-card span {
 
 .therapist-details {
   display: grid;
+  flex: 1;
   gap: 18px;
+  align-content: start;
   margin-top: 24px;
   padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -945,7 +957,7 @@ main > .section:not(.hero) .video-card span {
 }
 
 .therapist-details p {
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.92rem;
   line-height: 1.5;
